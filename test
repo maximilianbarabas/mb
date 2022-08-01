@@ -1,0 +1,58 @@
+import random, string, names
+
+class vmi(object):
+
+    ROBOT_LIBRARY_VERSION = 1.0
+
+    def __init__(self):
+        pass
+
+    def keyword(self):
+        pass
+
+    def strip_dollar_sign_return_float(self, input):
+        '''Return price with out USD sign as a float'''
+        stripped = (input[1:])
+        output = (float(stripped))
+        return output
+
+    def generate_random_email(self):
+        '''Generate a random email address'''
+        domains = [".com", ".co.uk"]
+        domain = (random.choice(domains))
+        at = "@"
+        user = ''.join([random.choice(string.ascii_letters) for n in range(10)])
+        hosts = ["google", "gmail", "outlook", "yahoo", "hotmail"]
+        host= (random.choice(hosts))
+        output = (user + at + host + domain)
+        return output
+
+    def generate_random_male_name(self):
+        '''Returns a random male first name'''
+        output = names.get_first_name(gender='male')
+        return output
+
+    def generate_random_last_name(self):
+        '''Returns a random last name'''
+        output = names.get_last_name()
+        return output
+
+
+Test Case Name: User is prompted to reset password after attempt with invalid data.
+Pre-requisites: Need to have latest Google Chrome
+Test Data: Email: xxxxxx@gmail.com Password: 1234567
+Test steps:
+1. Open Google Chrome browser
+2. Go to www.netflix.com
+3. Click on "sign in" button from home page
+4. Enter "xxxxxx@gmail.com" into email field
+5. Enter "1234567" into password field
+6. Click "sign in" button
+
+Expected result:
+User should be given error message suggesting user reset their password, with a link.
+
+Actual result:
+User is given error message "Incorrect password. Please try again or you can reset your password"
+
+Test result: pass
